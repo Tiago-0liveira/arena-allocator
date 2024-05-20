@@ -45,16 +45,14 @@ $(OBJ_DIR)%.o: $(SRC_FOLDER)%.c $(INCLUDE_HEADERS)
 	@mkdir -p $(OBJ_DIR) $(dir $@)
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
-run:
-	@./test/test_arena
-
 run_grind:
 	@valgrind --leak-check=full --show-leak-kinds=all ./test/test_arena
 
 link_test: $(LIB_FILE)
 	@$(CC) $(CFLAGS) -o test/test_arena test/test_arena.c -L$(LIB_DIR) -l$(NAME)
 
-test: link_test run
+test: link_test
+	@./test/test_arena
 test_grind: link_test run_grind
 
 clean:
