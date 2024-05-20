@@ -34,11 +34,7 @@ MSG1 = @echo ${IGreen}"Compiled Successfully ✔︎"${Color_Off}
 MSG2 = @echo ${IYellow}"Cleaned Successfully ✔︎"${Color_Off}
 MSG3 = @echo ${ICyan}"Cleaned ${NAME} Successfully ✔︎"${Color_Off}
 
-all: $(NAME)
-
-$(NAME): $(LIB_FILE)
-	@$(CC) $(CFLAGS) -o $(NAME) main.c -L$(LIB_DIR) -l$(NAME)
-	$(MSG1)
+all: $(LIB_FILE)
 
 $(LIB_FILE): $(OBJS)
 	@mkdir -p $(LIB_DIR)
