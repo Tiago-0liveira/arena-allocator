@@ -27,7 +27,7 @@
 // If set the arena will be zeroed out on creation
 #define ARENA_ZEROED			0x08
 // If set the arena will be freed on allocation failure
-#define ARENA_FREE_ON_FAIL		0x16
+#define ARENA_FREE_ON_FAIL		0x10
 
 #define ARENA_DEFAULT_FLAGS		ARENA_ASSERT_OVERFLOW | ARENA_FREE_ON_FAIL
 #define ARENA_ALL_FLAGS			0x0F
