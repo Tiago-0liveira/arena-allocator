@@ -1,11 +1,10 @@
 #include <arena.h>
-
 #include <string.h>
 #include <stdio.h>
 
 int main() {
     // Initialize the arena with an initial capacity of 1 MB and the ARENA_GROWABLE flag
-    Arena *arena = arena_create_flags(3 KB, ARENA_GROWABLE | ARENA_GROWABLE_DEBUG | ARENA_ZEROED);
+    Arena *arena = arena_create_flags(3 KB, ARENA_ASSERT_OVERFLOW | ARENA_ZEROED);
 
     // Allocation examples
     int *numbers = arena_alloc(arena, 1000 * sizeof(int));

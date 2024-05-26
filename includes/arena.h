@@ -32,11 +32,13 @@
 #define ARENA_DEFAULT_FLAGS		ARENA_ASSERT_OVERFLOW | ARENA_FREE_ON_FAIL
 #define ARENA_ALL_FLAGS			0x0F
 
-typedef struct {
+typedef struct T_Arena {
 	size_t	capacity;
 	size_t	size;
 	size_t	flags;
 	void	*data;
+	/* Should not be accessed */
+	struct T_Arena *_next;
 } Arena;
 
 
